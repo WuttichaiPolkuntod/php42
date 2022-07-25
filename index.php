@@ -20,7 +20,7 @@
             echo "<script>alert('username หรือ password ไม่ถูกต้อง')</script>";
         }
         else{
-            echo "<script>alert(ล็อกอินสำเร็จ)</script>";
+            header("location:admin/index.php");
         }
     }
 
