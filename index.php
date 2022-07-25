@@ -2,8 +2,6 @@
     if(isset($_POST['submit'])){
         $username=$_POST['Username'];
         $password=$_POST['Password'];
-        echo $username."<br>";
-        echo $password;
         $con=mysqli_connect('localhost','root','','php42') or die ("ไม่สามารถเชื่อมต่อ database ได้");
         /*if(!$con){
             echo "ไม่สามารถเชื่อมต่อ database ได้";
