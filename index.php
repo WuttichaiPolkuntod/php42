@@ -1,8 +1,8 @@
 <?php
     if(isset($_POST['submit'])){
+        include 'connect.php';
         $username=$_POST['Username'];
         $password=$_POST['Password'];
-        $con=mysqli_connect('localhost','root','','php42') or die ("ไม่สามารถเชื่อมต่อ database ได้");
         /*if(!$con){
             echo "ไม่สามารถเชื่อมต่อ database ได้";
         }
@@ -12,14 +12,17 @@
         $sql="SELECT * FROM user WHERE username='$username'and password='$password'";
         //mysql_query($sql,$con);
         $result=$con->query($sql);
-        /*$row=mysqli_fetch_array($result);
-        echo $row['username'];
+        $row=mysqli_fetch_array($result);
+        /*echo $row['username'];
         echo $row['password'];*/
         $num=mysqli_num_rows($result);
         if($num==0){
             echo "<script>alert('username หรือ password ไม่ถูกต้อง')</script>";
         }
         else{
+            session_start();
+            $_SESSION['username']=$row['username'];
+            $_SESSION['name']=$row['name'];
             header("location:admin/index.php");
         }
     }
