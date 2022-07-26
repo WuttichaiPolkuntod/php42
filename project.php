@@ -3,18 +3,8 @@
         $username=$_POST['Username'];
         $password=$_POST['Password'];
         $con=mysqli_connect('localhost','root','','php42') or die ("ไม่สามารถเชื่อมต่อ database ได้");
-        /*if(!$con){
-            echo "ไม่สามารถเชื่อมต่อ database ได้";
-        }
-        else{
-            echo "เชื่อมต่อ database สำเร็จ";
-        }*/
-        $sql="SELECT * FROM employees WHERE username='$username'and password='$password'";
-        //mysql_query($sql,$con);
+        $sql="SELECT * FROM employees WHERE Emp_id='$username'and Emp_password='$password'";
         $result=$con->query($sql);
-        /*$row=mysqli_fetch_array($result);
-        echo $row['username'];
-        echo $row['password'];*/
         $num=mysqli_num_rows($result);
         if($num==0){
             echo "<script>alert('username หรือ password ไม่ถูกต้อง')</script>";
