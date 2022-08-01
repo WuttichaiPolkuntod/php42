@@ -34,7 +34,7 @@
 ?> 
 <div class="container w-50 mt-5">
     <div class="card">
-        <div class="card-header bg-success text-white">เพิ่มช้อมูล user</div>
+        <div class="card-header bg-success text-white">เพิ่มข้อมูล user</div>
         <div class="card-body">
             <form action="<?php $_SERVER['PHP_SELF']?>" method="POST">
                 <div class="mb-3 row">
