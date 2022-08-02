@@ -5,6 +5,19 @@
     $sql="SELECT * FROM user WHERE username='$username'";
     $result=$con->query($sql);
     $row=mysqli_fetch_array($result);
+    if(isset($_POST['submit'])){
+        $password=$_POST['password'];
+        $name=$_POST['name'];
+        $email=$_POST['email'];
+        $sql="UPDATE user SET password='$password',name='$name',email='$email' WHERE username='$username'";
+        $result=$con->query($sql);
+        if(!$result){
+            echo"<script>alert('ไม่สามารถบันทึกข้อมูลได้')</script>";
+        }
+        else{
+            echo "<script>window.location.href='user.php'</script>";
+        }
+    }
 ?> 
 
 <div class="container w-50 mt-5">
@@ -15,7 +28,7 @@
                 <div class="mb-3 row">
                     <label class="label col-sm-2 com-form-label">username</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form*control" name="username" value="<?php echo $row['username']?>">
+                        <input type="text" class="form*control" name="username" readonly value="<?php echo $row['username']?>">
                     </div>
                 </div>
                 <div class="mb-3 row">
