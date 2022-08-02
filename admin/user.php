@@ -23,7 +23,10 @@
             <td><?php echo $row['name'] ?></td>
             <td><?php echo $row['username'] ?></td>
             <td><?php echo $row['email'] ?></td>
-            <td>แก้ไข/ลบ</td>
+            <td>
+                <a href="edit_user.php" class="btn bg-warning"><i class="bi bi-pencil-square"></i></a>
+                <a href="del_user.php" class="btn bg-danger"><i class="bi bi-x-square-fill"></i></a>
+            </td>
         </tr>
         <?php } ?>
     </table>
