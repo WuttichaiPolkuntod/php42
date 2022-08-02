@@ -29,7 +29,7 @@
       </ul>
       <ul class="navbar-nav">
         <li class="nav-link">
-            <a class="nav-link" href="">
+            <a class="nav-link text-white" href="">
                 <?php
                     session_start();
                     echo $_SESSION['name'];
@@ -37,7 +37,7 @@
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="logout.php">Logout</a>
+            <a class="nav-link text-white" href="logout.php">Logout</a>
         </li>    
       </ul>
     </div>

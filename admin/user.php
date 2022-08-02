@@ -24,8 +24,8 @@
             <td><?php echo $row['username'] ?></td>
             <td><?php echo $row['email'] ?></td>
             <td>
-                <a href="edit_user.php" class="btn bg-warning"><i class="bi bi-pencil-square"></i></a>
-                <a href="del_user.php" class="btn bg-danger"><i class="bi bi-x-square-fill"></i></a>
+                <a href="edit_user.php?username=<?php echo $row['username']?>" class="btn bg-warning"><i class="bi bi-pencil-square"></i></a>
+                <a href="del_user.php?username=<?php echo $row['username']?>" class="btn bg-danger"><i class="bi bi-x-square-fill"></i></a>
             </td>
         </tr>
         <?php } ?>
