@@ -22,7 +22,10 @@
             <td><?php echo $row['pro_name'] ?></td>
             <td><?php echo $row['pro_price'] ?></td>
             <td><?php echo $row['pro_qty'] ?></td>
-            <td>แก้ไข/ลบ</td>
+            <td>
+            <a href="edit_product.php?pro_id=<?php echo $row['pro_id']?>" class="btn bg-warning"><i class="bi bi-pencil-square"></i></a>
+                <a href="del_product.php?pro_id=<?php echo $row['pro_id']?>" class="btn bg-danger" onclick=" return confirm('ยืนยันการลบไหม')"><i class="bi bi-x-square-fill"></i></a>
+            </td>
         </tr>
         <?php } ?>
     </table>
