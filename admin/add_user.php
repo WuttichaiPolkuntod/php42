@@ -6,6 +6,7 @@
         $password=$_POST['password'];
         $name=$_POST['name'];
         $email=$_POST['email'];
+        $filename=$_FILES['user_pic']['name'];
         if($username==""||$password==""||$name==""||$email=="")
         {
             echo "<script>alert('คุณกรอกข้อมูลไม่ครบ')</script>";
@@ -19,14 +20,17 @@
                     echo "<script>alert('username นี้มีอยู่แล้ว')</script>";
                 }
                 else{
-                    $sql="INSERT  INTO user (username,password,name,email) VALUES('$username','$password','$name','$email')";
-                $result=$con->query($sql);
-                if(!$result){
-                echo "<script>alert('ไม่สามารถเพิ่มข้อมูลได้')</script>";
+                    if(move_uploaded_file($_FILES['user_pic']['tmp_name'],'user_pic/'.$filename)){
+
+                    $sql="INSERT  INTO user (username,password,name,email,user_pic) VALUES('$username','$password','$name','$email','$filename')";
+                    $result=$con->query($sql);
+                    if(!$result){
+                    echo "<script>alert('ไม่สามารถเพิ่มข้อมูลได้')</script>";
         }
-                else{
-                echo "<script>window.location.href='user.php'</script>";
-        }
+                    else{
+                    echo "<script>window.location.href='user.php'</script>";
+                    }   
+                    }
                 }
             }
     }
@@ -36,7 +40,7 @@
     <div class="card">
         <div class="card-header bg-success text-white">เพิ่มข้อมูล user</div>
         <div class="card-body">
-            <form action="<?php $_SERVER['PHP_SELF']?>" method="POST">
+            <form action="<?php $_SERVER['PHP_SELF']?>" method="POST" enctype="multipart/form-data">
                 <div class="mb-3 row">
                     <label class="label col-sm-2 com-form-label">username</label>
                     <div class="col-sm-10">
@@ -59,6 +63,12 @@
                     <label class="label col-sm-2 com-form-label">email</label>
                     <div class="col-sm-10">
                         <input type="email" class="form*control" name="email">
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <label class="label col-sm-2 com-form-label"></label>
+                    <div class="col-sm-10">
+                        <input type="file" class="form-control" name="user_pic">
                     </div>
                 </div>
                 <div class="mb-3 row">
