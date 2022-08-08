@@ -7,7 +7,7 @@
         $name=$_POST['name'];
         $email=$_POST['email'];
         $filename=$_FILES['user_pic']['name'];
-        if($username==""||$password==""||$name==""||$email=="")
+        if($username==""||$password==""||$name==""||$email==""||$filename=="")
         {
             echo "<script>alert('คุณกรอกข้อมูลไม่ครบ')</script>";
         }
