@@ -26,7 +26,7 @@
                     $result=$con->query($sql);
                     if(!$result){
                     echo "<script>alert('ไม่สามารถเพิ่มข้อมูลได้')</script>";
-        }
+                    }
                     else{
                     echo "<script>window.location.href='user.php'</script>";
                     }   
