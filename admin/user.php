@@ -22,9 +22,9 @@
                     <input type="submit" name="addm" class="btn btn-primary mb-3" value="+เพิ่มข้อมูลที่ละหลายคน">
                 </div>
             </div>
+            </form>
         </div>
     </div>
-    </form>
     <table class="table table-striped">
         <tr class="bg-primary">
             <th class="text-white" >ลำดับที่</th>
