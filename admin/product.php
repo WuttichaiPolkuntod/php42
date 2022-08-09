@@ -19,7 +19,7 @@
                     <input type="file" class="form-control" class="mb-3" name="csv_file">
                 </div>
                 <div class="col-4">
-                    <input type="submit" name="addm" class="btn btn-primary mb-3" value="+เพิ่มข้อมูลที่ละหลายคน">
+                    <input type="submit" name="addm" class="btn btn-primary mb-3" value="+เพิ่มสินค้าที่ละหลายชิ้น">
                 </div>
             </div>
             </form>
