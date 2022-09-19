@@ -22,7 +22,7 @@
         if(!$result){
             echo"<script>alert('ไม่สามารถบันทึกข้อมูลได้')</script>";
         }
-        else{
+        else{ 
             echo "<script>window.location.href='user.php'</script>";
         }
     }

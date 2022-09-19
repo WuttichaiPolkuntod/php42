@@ -75,6 +75,7 @@
                     <label class="label col-sm-2 com-form-label"></label>
                     <div class="col-sm-10">
                         <input type="submit" class="btn bg-success text-white" name="submit" value="เพิ่มข้อมูล">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                     </div>
                 </div>
             </form>
