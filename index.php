@@ -23,7 +23,7 @@
             session_start();
             $_SESSION['username']=$row['username'];
             $_SESSION['name']=$row['name'];
-            header("location:admin/index.php");
+            header("location:admin/user.php");
         }
     }
 
